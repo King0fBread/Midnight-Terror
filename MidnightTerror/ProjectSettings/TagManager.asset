@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 657256771
+    locked: 0
+  - name: BacklayerObj
+    uniqueID: 2637634883
+    locked: 0
+  - name: MiddlelayerObj
+    uniqueID: 817351931
+    locked: 0
+  - name: FrontlayerObj
+    uniqueID: 2698785451
+    locked: 0
