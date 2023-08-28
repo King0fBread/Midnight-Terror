@@ -11,8 +11,8 @@ public class AreaStatus : MonoBehaviour
 
     }
 
-    void Update()
+    public Transform GetCameraTransform()
     {
-        
+        return _areaCameraTransform;
     }
 }
