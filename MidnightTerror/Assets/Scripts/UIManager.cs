@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Button[] _buttonsClockwiseFromTop = new Button[4];
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisplayDirectionButtons(AreaStatus areaStatus)
     {
-        
+        int buttonId = 0;
+        foreach(bool directionAvailability in areaStatus.GetDirectionsArray())
+        {
+            _buttonsClockwiseFromTop[buttonId].gameObject.SetActive(directionAvailability);
+            buttonId++;
+        }
     }
 }

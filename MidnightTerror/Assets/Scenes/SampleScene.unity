@@ -152,26 +152,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8e6cc2af0a67b4a83f97cc97eb1c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
+  _camera: {fileID: 519420028}
   _areasList:
   - horizontalAreaId: 0
+    verticalAreaId: 1
+    status: {fileID: 639796879}
+  - horizontalAreaId: 1
+    verticalAreaId: 1
+    status: {fileID: 1940095452}
+  - horizontalAreaId: 2
     verticalAreaId: 0
-    status: {fileID: 0}
-  - horizontalAreaId: 0
-    verticalAreaId: 0
-    status: {fileID: 0}
-  - horizontalAreaId: 0
-    verticalAreaId: 0
-    status: {fileID: 0}
-  - horizontalAreaId: 0
-    verticalAreaId: 0
-    status: {fileID: 0}
-  - horizontalAreaId: 0
-    verticalAreaId: 0
-    status: {fileID: 0}
-  - horizontalAreaId: 0
-    verticalAreaId: 0
-    status: {fileID: 0}
+    status: {fileID: 495656337}
+  - horizontalAreaId: 2
+    verticalAreaId: 1
+    status: {fileID: 2080222944}
+  - horizontalAreaId: 2
+    verticalAreaId: 2
+    status: {fileID: 950868840}
+  - horizontalAreaId: 3
+    verticalAreaId: 1
+    status: {fileID: 1694202763}
+  _uiManager: {fileID: 419099442}
 --- !u!4 &263252873
 Transform:
   m_ObjectHideFlags: 0
@@ -383,6 +384,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba23a2bc54f3f4a42913eb603342b753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttonsClockwiseFromTop:
+  - {fileID: 1658184208}
+  - {fileID: 1210023429}
+  - {fileID: 327482779}
+  - {fileID: 2018255910}
 --- !u!1 &495656334
 GameObject:
   m_ObjectHideFlags: 0
