@@ -13,6 +13,8 @@ public class AreaManager : MonoBehaviour
 
     [SerializeField] private UIManager _uiManager;
 
+    //array of area comopnents for referencing the areas
+
     [Serializable]
     private struct Area
     {
@@ -24,7 +26,7 @@ public class AreaManager : MonoBehaviour
     private int _currentAreaCodeHorizontal;
     private int _currentAreaCodeVertical;
 
-    void Start()
+    private void Start()
     {
         _currentAreaCodeHorizontal = 2;
         _currentAreaCodeVertical = 0;
@@ -39,7 +41,7 @@ public class AreaManager : MonoBehaviour
                 area.verticalAreaId == _currentAreaCodeVertical)
             {
                 _camera.transform.position = area.status.GetCameraTransform().position;
-                _uiManager.DisplayDirectionButtons(area.status);
+                _uiManager.DisplayDirectionButtons(area.status); 
 
                 break;
             }
