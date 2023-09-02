@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField] private Image _itemShowcaseImageSlot;
-    //TODO get image slot through child
+    private Image _itemShowcaseImageSlot;
     private bool _isOccupied = false;
     //if not occupied - place in an item after picking up
+    private void Awake()
+    {
+        _itemShowcaseImageSlot = transform.GetChild(0).GetComponent<Image>();
+    }
 
     public void PlaceItemInSlot(Sprite itemSprite)
     {
