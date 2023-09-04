@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,11 +28,21 @@ public class PlayerTouchManager : MonoBehaviour
         {
             print(hit.collider.gameObject.name);
 
-
+            DetrermineItemAndInteract(hit.collider.gameObject);
         }
     }
     private void DetrermineItemAndInteract(GameObject gameObject)
     {
-        if()
+        IInteractable interactableObject;
+
+        if(gameObject.TryGetComponent<IInteractable>(out interactableObject))
+        {
+            interactableObject.TryExecuteInteraction();
+        }
+
+        else if (gameObject.CompareTag("Pickable"))
+        {
+            //pick item up
+        }
     }
 }
