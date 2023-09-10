@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class UIManager: MonoBehaviour
 {
+    [SerializeField] private GameObject _buttonsVisibilityObject;
     [SerializeField] private Button[] _buttonsClockwiseFromTop = new Button[4];
     public void DisplayDirectionButtons(AreaStatus areaStatus)
     {
@@ -12,5 +13,13 @@ public class UIManager: MonoBehaviour
             _buttonsClockwiseFromTop[buttonId].gameObject.SetActive(directionAvailability);
             buttonId++;
         }
+    }
+    public void HideAllDirectionButtons()
+    {
+        _buttonsVisibilityObject.SetActive(false);
+    }
+    public void ShowAllDirectionButtons()
+    {
+        _buttonsVisibilityObject.SetActive(true);
     }
 }

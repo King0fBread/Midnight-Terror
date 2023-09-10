@@ -7,8 +7,10 @@ using UnityEngine.InputSystem;
 public class PlayerTouchManager : MonoBehaviour
 {
     [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private LayerMask _layerMask;
 
     private Camera _camera;
+    private Vector2 _touchWorldPosition;
 
     private void Awake()
     {
@@ -21,10 +23,12 @@ public class PlayerTouchManager : MonoBehaviour
 
     private void SingleTouch_performed(InputAction.CallbackContext obj)
     {
-        print("touch");
         Vector2 touchPosition = obj.ReadValue<Vector2>();
-        RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
-        if(hit.collider != null)
+
+        _touchWorldPosition = _camera.ScreenToWorldPoint(touchPosition);
+
+        RaycastHit2D hit = Physics2D.Raycast(_touchWorldPosition, Vector2.zero, _layerMask);
+        if(hit)
         {
             print(hit.collider.gameObject.name);
 
@@ -34,6 +38,7 @@ public class PlayerTouchManager : MonoBehaviour
     private void DetrermineItemAndInteract(GameObject gameObject)
     {
         IInteractable interactableObject;
+        print("detecting collider");
 
         if(gameObject.TryGetComponent<IInteractable>(out interactableObject))
         {
