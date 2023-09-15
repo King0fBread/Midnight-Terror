@@ -30,8 +30,6 @@ public class PlayerTouchManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(_touchWorldPosition, Vector2.zero, _layerMask);
         if(hit)
         {
-            print(hit.collider.gameObject.name);
-
             DetrermineItemAndInteract(hit.collider.gameObject);
         }
     }

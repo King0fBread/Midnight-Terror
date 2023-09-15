@@ -23,4 +23,8 @@ public class InventorySlot : MonoBehaviour
         _itemShowcaseImageSlot.sprite = defaultItemSprite;
         _isOccupied = false;
     }
+    public string GetItemByName()
+    {
+        return _itemShowcaseImageSlot.sprite.name;
+    }
 }

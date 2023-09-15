@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -7,12 +8,38 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] Sprite _defalutSlotSprite;
 
     [SerializeField] private InventorySlot[] _inventorySlots;
-    void Start()
+
+    public static InventoryManager instance { get { return _instance; } }
+    private static InventoryManager _instance;
+
+    private void Start()
     {
+        if(_instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+
         foreach (InventorySlot slot in _inventorySlots)
         {
             slot.ClearSlot(_defalutSlotSprite);
         }
+    }
+
+    public bool TryToFindAndUseItem(string requiredItem)
+    {
+        foreach(InventorySlot slot in _inventorySlots)
+        {
+            if(slot.GetItemByName() == requiredItem)
+            {
+                slot.ClearSlot(_defalutSlotSprite);
+                return true;
+            }
+        }
+        return false;
     }
 
 }
