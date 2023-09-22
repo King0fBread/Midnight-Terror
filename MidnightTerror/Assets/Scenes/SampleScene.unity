@@ -718,6 +718,7 @@ MonoBehaviour:
     verticalAreaId: 1
     status: {fileID: 1694202763}
   _uiManager: {fileID: 419099442}
+  _transitionScreenAlphaControl: {fileID: 1303712046}
 --- !u!4 &263252873
 Transform:
   m_ObjectHideFlags: 0
@@ -3159,7 +3160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1303712045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3191,7 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72e9b427e04b5540a02a23c7cf7ed79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _alphaChangeRate: 0
+  _alphaChangeRate: 5
 --- !u!114 &1303712047
 MonoBehaviour:
   m_ObjectHideFlags: 0

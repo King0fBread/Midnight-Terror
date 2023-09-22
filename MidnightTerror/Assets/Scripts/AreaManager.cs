@@ -13,6 +13,8 @@ public class AreaManager : MonoBehaviour
 
     [SerializeField] private UIManager _uiManager;
 
+    [SerializeField] private TransitionScreenAlphaControl _transitionScreenAlphaControl;
+
     //array of area comopnents for referencing the areas
 
     [Serializable]
@@ -40,12 +42,19 @@ public class AreaManager : MonoBehaviour
             if(area.horizontalAreaId == _currentAreaCodeHorizontal &&
                 area.verticalAreaId == _currentAreaCodeVertical)
             {
-                _camera.transform.position = area.status.GetCameraTransform().position;
-                _uiManager.DisplayDirectionButtons(area.status); 
-
+                StartCoroutine(MoveToAreaCoroutine(area));
                 break;
             }
         }
+    }
+    private IEnumerator MoveToAreaCoroutine(Area area)
+    {
+        _transitionScreenAlphaControl.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(0.2f);
+
+        _camera.transform.position = area.status.GetCameraTransform().position;
+        _uiManager.DisplayDirectionButtons(area.status);
     }
 
     public void ChangeDirectionToLeft()
