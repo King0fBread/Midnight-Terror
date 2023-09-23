@@ -28,6 +28,7 @@ public class PlayerTouchManager : MonoBehaviour
         _touchWorldPosition = _camera.ScreenToWorldPoint(touchPosition);
 
         RaycastHit2D hit = Physics2D.Raycast(_touchWorldPosition, Vector2.zero, _layerMask);
+
         if(hit)
         {
             DetrermineItemAndInteract(hit.collider.gameObject);
@@ -36,16 +37,16 @@ public class PlayerTouchManager : MonoBehaviour
     private void DetrermineItemAndInteract(GameObject gameObject)
     {
         IInteractable interactableObject;
-        print("detecting collider");
+        PickableItem pickableItem;
 
         if(gameObject.TryGetComponent<IInteractable>(out interactableObject))
         {
             interactableObject.TryExecuteInteraction();
         }
 
-        else if (gameObject.CompareTag("Pickable"))
+        else if (gameObject.TryGetComponent<PickableItem>(out pickableItem))
         {
-            //pick item up
+            pickableItem.PlaceItemInInventory();
         }
     }
 }

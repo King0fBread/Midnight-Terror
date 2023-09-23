@@ -12,6 +12,10 @@ public class InventorySlot : MonoBehaviour
     {
         _itemShowcaseImageSlot = transform.GetChild(0).GetComponent<Image>();
     }
+    public bool GetSlotOccupiedState()
+    {
+        return _isOccupied;
+    }
 
     public void PlaceItemInSlot(Sprite itemSprite)
     {

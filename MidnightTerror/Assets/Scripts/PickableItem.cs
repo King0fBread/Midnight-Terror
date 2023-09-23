@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class PickableItem : MonoBehaviour
 {
-    public GameObject GetItemObject()
+    private Sprite _sprite;
+    private bool _isPickedUp = false;
+    private void Awake()
     {
-        return gameObject;
+        _sprite = GetComponent<SpriteRenderer>().sprite;
+    }
+    public void PlaceItemInInventory()
+    {
+        _isPickedUp = InventoryManager.instance.TryPlaceItemInFreeSlot(_sprite);
+
+        if(_isPickedUp)
+            Destroy(gameObject);
     }
 }

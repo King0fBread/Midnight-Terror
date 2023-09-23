@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -36,6 +37,18 @@ public class InventoryManager : MonoBehaviour
             if(slot.GetItemByName() == requiredItem)
             {
                 slot.ClearSlot(_defalutSlotSprite);
+                return true;
+            }
+        }
+        return false;
+    }
+    public bool TryPlaceItemInFreeSlot(Sprite sprite)
+    {
+        foreach(InventorySlot slot in _inventorySlots)
+        {
+            if(slot.GetSlotOccupiedState() == false)
+            {
+                slot.PlaceItemInSlot(sprite);
                 return true;
             }
         }
