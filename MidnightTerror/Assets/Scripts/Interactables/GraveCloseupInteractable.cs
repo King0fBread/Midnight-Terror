@@ -18,7 +18,6 @@ public class GraveCloseupInteractable : MonoBehaviour, IInteractable
 
     public void TryExecuteInteraction()
     {
-        print("grave inetarction");
         if (!_graveBasic.activeSelf)
         {
             _graveBasic.SetActive(true);
