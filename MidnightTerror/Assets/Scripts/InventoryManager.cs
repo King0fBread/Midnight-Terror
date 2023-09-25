@@ -49,6 +49,8 @@ public class InventoryManager : MonoBehaviour
             if(slot.GetSlotOccupiedState() == false)
             {
                 slot.PlaceItemInSlot(sprite);
+                //combinable item check
+
                 return true;
             }
         }
