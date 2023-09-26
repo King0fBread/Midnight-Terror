@@ -13,9 +13,14 @@ public class CombinableItemsManager : MonoBehaviour
 
         public Sprite _firstCombinableItem;
         public Sprite _secondCombinableItem;
+
+        private InventorySlot _firstSlotWithACombinable;
+        private InventorySlot _secondSlotWithACombinable;
+
+
     }
-    private void Awake()
+    public void CheckIfSlotHasCombinable(InventorySlot slot)
     {
-        
+        //foreach Combinable loop, if slot sprite == required sprite, fill 1 combinable slot etc. if 2 filled == place new item in inventory and remove combinables
     }
 }

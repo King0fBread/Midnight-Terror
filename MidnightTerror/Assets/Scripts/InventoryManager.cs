@@ -10,6 +10,8 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private InventorySlot[] _inventorySlots;
 
+    [SerializeField] private CombinableItemsManager _combinableItemsManager;
+
     public static InventoryManager instance { get { return _instance; } }
     private static InventoryManager _instance;
 
@@ -49,7 +51,7 @@ public class InventoryManager : MonoBehaviour
             if(slot.GetSlotOccupiedState() == false)
             {
                 slot.PlaceItemInSlot(sprite);
-                //combinable item check
+                _combinableItemsManager.CheckIfSlotHasCombinable(slot);
 
                 return true;
             }

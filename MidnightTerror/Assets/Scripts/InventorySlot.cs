@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
@@ -30,5 +31,9 @@ public class InventorySlot : MonoBehaviour
     public string GetItemByName()
     {
         return _itemShowcaseImageSlot.sprite.name;
+    }
+    public Sprite GetItemBySprite()
+    {
+        return _itemShowcaseImageSlot.sprite;
     }
 }
