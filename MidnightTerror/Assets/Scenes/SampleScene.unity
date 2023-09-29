@@ -3311,7 +3311,7 @@ MonoBehaviour:
   - {fileID: 488054625}
   - {fileID: 1736642813}
   - {fileID: 218920535}
-  _combinableItemsManager: {fileID: 0}
+  _combinableItemsManager: {fileID: 1794676670}
 --- !u!4 &1092324504
 Transform:
   m_ObjectHideFlags: 0

@@ -37,10 +37,24 @@ public class CombinableItemsManager : MonoBehaviour
             else
             {
                 _secondSlotWithACombinable = slot;
-                //UI
                 return this;
             }
             
+        }
+        public InventorySlot GetFirstSlot()
+        {
+            return _firstSlotWithACombinable;
+        }
+        public InventorySlot GetSecondSlot()
+        {
+            return _secondSlotWithACombinable;
+        }
+        public void ClearCoombinable()
+        {
+            _firstSlotWithACombinable = null;
+            _secondSlotWithACombinable = null;
+
+            _firstSlotOccupied = false;
         }
     }
     public void CheckIfSlotHasCombinable(InventorySlot slot)
@@ -50,11 +64,23 @@ public class CombinableItemsManager : MonoBehaviour
             if (combinable.CheckIfSpriteIsCombinable(slot.GetItemBySprite()))
             {
                 _availableCombinable = combinable.PopulateAvailableSlot(slot);
+
+                if(_availableCombinable != null)
+                {
+                    _combineButton.SetActive(true);
+                }
             }
         }
     }
     public void CombineItems()
     {
-        //place new item in inventory and remove combinables
+        _combineButton.SetActive(false);
+
+        _availableCombinable.GetFirstSlot().ClearSlot(InventoryManager.instance.defalutSlotSprite);
+        _availableCombinable.GetSecondSlot().ClearSlot(InventoryManager.instance.defalutSlotSprite);
+
+        _availableCombinable.GetFirstSlot().PlaceItemInSlot(_availableCombinable._finalItem);
+
+        _availableCombinable.ClearCoombinable();
     }
 }

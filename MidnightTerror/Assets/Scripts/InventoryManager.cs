@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] Sprite _defalutSlotSprite;
+    public Sprite defalutSlotSprite;
 
     [SerializeField] private InventorySlot[] _inventorySlots;
 
@@ -28,7 +28,7 @@ public class InventoryManager : MonoBehaviour
 
         foreach (InventorySlot slot in _inventorySlots)
         {
-            slot.ClearSlot(_defalutSlotSprite);
+            slot.ClearSlot(defalutSlotSprite);
         }
     }
 
@@ -38,7 +38,7 @@ public class InventoryManager : MonoBehaviour
         {
             if(slot.GetItemByName() == requiredItem)
             {
-                slot.ClearSlot(_defalutSlotSprite);
+                slot.ClearSlot(defalutSlotSprite);
                 return true;
             }
         }
