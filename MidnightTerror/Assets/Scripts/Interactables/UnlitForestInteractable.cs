@@ -27,5 +27,7 @@ public class UnlitForestInteractable : MonoBehaviour, IInteractable
         _overlayAnimator.Play("UnlitAreaBlackOverlay");
         yield return new WaitForSeconds(1.5f);
         _boxCutterItem.SetActive(true);
+
+        Destroy(gameObject);
     }
 }
