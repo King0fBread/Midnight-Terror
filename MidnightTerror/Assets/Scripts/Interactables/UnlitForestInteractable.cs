@@ -25,7 +25,7 @@ public class UnlitForestInteractable : MonoBehaviour, IInteractable
     private IEnumerator PlayCameraFlashSequenceCoroutine()
     {
         _overlayAnimator.Play("UnlitAreaBlackOverlay");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         _boxCutterItem.SetActive(true);
 
         Destroy(gameObject);
