@@ -55,6 +55,16 @@ public class AreaManager : MonoBehaviour
 
         _camera.transform.position = area.status.GetCameraTransform().position;
         _uiManager.DisplayDirectionButtons(area.status);
+
+        CheckAreaForFunctionalityAndExecute(area.status);
+    }
+    private void CheckAreaForFunctionalityAndExecute(AreaStatus area)
+    {
+        IFirstEntranceFunctionalArea areaFunctionality;
+        if(area.gameObject.TryGetComponent(out areaFunctionality))
+        {
+            areaFunctionality.ExecuteMechanicOnEntrance();
+        }
     }
 
     public void ChangeDirectionToLeft()
