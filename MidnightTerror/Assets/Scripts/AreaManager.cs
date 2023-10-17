@@ -60,7 +60,7 @@ public class AreaManager : MonoBehaviour
     }
     private void CheckAreaForFunctionalityAndExecute(AreaStatus area)
     {
-        IFirstEntranceFunctionalArea areaFunctionality;
+        IFunctionalArea areaFunctionality;
         if(area.gameObject.TryGetComponent(out areaFunctionality))
         {
             areaFunctionality.ExecuteMechanicOnEntrance();

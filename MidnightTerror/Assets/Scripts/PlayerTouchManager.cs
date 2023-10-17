@@ -38,6 +38,7 @@ public class PlayerTouchManager : MonoBehaviour
     {
         IInteractable interactableObject;
         PickableItem pickableItem;
+        EndingActivator endingActivator;
 
         if(gameObject.TryGetComponent<IInteractable>(out interactableObject))
         {
@@ -46,6 +47,11 @@ public class PlayerTouchManager : MonoBehaviour
 
         else if (gameObject.TryGetComponent<PickableItem>(out pickableItem))
         {
+            if (gameObject.TryGetComponent<EndingActivator>(out endingActivator))
+            {
+                endingActivator.ActivateEndingArea();
+            }
+
             pickableItem.PlaceItemInInventory();
         }
     }
