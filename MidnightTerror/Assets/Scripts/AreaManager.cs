@@ -32,6 +32,7 @@ public class AreaManager : MonoBehaviour
     {
         _currentAreaCodeHorizontal = 2;
         _currentAreaCodeVertical = 0;
+
         DisplayCurrentArea();
     }
 
@@ -85,6 +86,13 @@ public class AreaManager : MonoBehaviour
     public void ChangeDirectionToBotton()
     {
         _currentAreaCodeVertical -= 1;
+        DisplayCurrentArea();
+    }
+    public void SetAreaCodesAndMoveToArea(int horizontalCode, int verticalCode)
+    {
+        _currentAreaCodeHorizontal = horizontalCode;
+        _currentAreaCodeVertical = verticalCode;
+
         DisplayCurrentArea();
     }
 }

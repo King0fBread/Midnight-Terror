@@ -7,6 +7,6 @@ public class GhostSmilingLogic : MonoBehaviour
 
     public void ContinueTheEndingSequence()
     {
-        EndingMovementManager.instance.EnableMovingLeft();
+        LanternAreaMovementManager.instance.EnableLeavingLanternArea();
     }
 }

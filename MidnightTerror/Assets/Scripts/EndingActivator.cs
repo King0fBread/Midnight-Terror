@@ -6,6 +6,6 @@ public class EndingActivator : MonoBehaviour
 {
     public void ActivateEndingArea()
     {
-        EndingMovementManager.instance.MoveToEndingArea();
+        LanternAreaMovementManager.instance.MoveToLanternArea();
     }
 }
