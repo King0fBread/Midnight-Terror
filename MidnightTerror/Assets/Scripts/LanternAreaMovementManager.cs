@@ -22,6 +22,8 @@ public class LanternAreaMovementManager : MonoBehaviour
 
     [SerializeField] private Animator _ghostAnimator;
 
+    [SerializeField] private ForestAreaMovementManager _forestManager;
+
     private Camera _camera;
 
     private int _currentStep = 0;
@@ -72,7 +74,10 @@ public class LanternAreaMovementManager : MonoBehaviour
     }
     private void LeaveLanternAreaByLeftButton()
     {
-        print("left");
+        _lanternAreaObject.SetActive(false);
+        _lanternAreaMovementUI.SetActive(false);
+
+        _forestManager.MoveToFirstForestArea(_camera);
     }
     public void EnableLeavingLanternArea()
     {

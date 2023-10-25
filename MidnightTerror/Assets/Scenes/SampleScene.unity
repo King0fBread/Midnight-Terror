@@ -610,7 +610,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 69bc4b6b1d9c3f14f818d6b69517bc3e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1028,7 +1028,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02de737a54fe1a94f9fc31736468b695, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1992,7 +1992,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b62efd53ae09454498e7dfeaaedc0386, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2190,7 +2190,7 @@ Transform:
   m_GameObject: {fileID: 458450676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.69}
   m_LocalScale: {x: 0.93396825, y: 0.93396825, z: 0.93396825}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5479,7 +5479,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80ab236b73657b04fb8997e4d78e8eb8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6595,7 +6595,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a22306732cb962d45b13906807352d2c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6630,7 +6630,7 @@ Transform:
   m_GameObject: {fileID: 1371959479}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.13, z: 0}
+  m_LocalPosition: {x: 0, y: -0.13, z: -4.31}
   m_LocalScale: {x: 0.6177796, y: 0.6177796, z: 0.6177796}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6729,6 +6729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390736109}
+  - component: {fileID: 1390736110}
   m_Layer: 0
   m_Name: ForestAreaManager
   m_TagString: Untagged
@@ -6751,6 +6752,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1894607125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1390736110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390736108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72678bb32c83fb8438bbcbfc02b16c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forestMovementUI: {fileID: 88080603}
+  _forestCameraTransforms:
+  - {fileID: 2073720240}
+  - {fileID: 1587265878}
+  - {fileID: 1371959480}
+  - {fileID: 2020886609}
+  - {fileID: 458450677}
+  _forestMovementButtons:
+  - {fileID: 1495929823}
+  - {fileID: 1991536343}
+  - {fileID: 665825095}
+  - {fileID: 674661125}
 --- !u!1 &1393833011
 GameObject:
   m_ObjectHideFlags: 0
@@ -7458,7 +7483,7 @@ Transform:
   m_GameObject: {fileID: 1587265877}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.39, z: 0}
+  m_LocalPosition: {x: 0, y: -0.39, z: -2.9}
   m_LocalScale: {x: 0.6144015, y: 0.6144015, z: 0.6144015}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9942,7 +9967,7 @@ Transform:
   m_GameObject: {fileID: 2020886608}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.68, z: 0}
+  m_LocalPosition: {x: 0, y: -0.68, z: -3.47}
   m_LocalScale: {x: 0.43658587, y: 0.43658587, z: 0.43658587}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10623,6 +10648,7 @@ MonoBehaviour:
   _forwardButton: {fileID: 1074044419}
   _leftButton: {fileID: 401328063}
   _ghostAnimator: {fileID: 1784814573}
+  _forestManager: {fileID: 1390736110}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
