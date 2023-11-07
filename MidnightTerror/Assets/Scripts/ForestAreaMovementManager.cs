@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class ForestAreaMovementManager : MonoBehaviour
 {
     [SerializeField] private GameObject _forestMovementUI;
+    [SerializeField] private GameObject _forestGhostObject;
     [SerializeField] private Transform[] _forestCameraTransforms;
     [SerializeField] private Button[] _forestMovementButtons;
     private int _currentForestAreaID;
@@ -49,6 +51,7 @@ public class ForestAreaMovementManager : MonoBehaviour
             }
 
             _forestMovementUI.SetActive(false);
+            _forestGhostObject.SetActive(true);
         }
     }
 }
