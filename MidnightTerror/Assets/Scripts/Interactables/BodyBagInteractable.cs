@@ -19,21 +19,23 @@ public class BodyBagInteractable : MonoBehaviour, IInteractable
                 if (InventoryManager.instance.TryToFindAndUseItem("OldKnife"))
                 {
                     _animator.CrossFade("BagFloatingIdleFar", 0, 0);
+                    _currentBagState++;
                 }
                 break;
             case 1:
                 if (InventoryManager.instance.TryToFindAndUseItem("Rope"))
                 {
                     _animator.CrossFade("BagFloatingIdleClose", 0, 0);
+                    _currentBagState++;
                 }
                 break;
             case 2:
                 if (InventoryManager.instance.TryToFindAndUseItem("Boxcutter"))
                 {
                     _armWithItemObject.SetActive(true);
+                    _currentBagState++;
                 }
                 break;
         }
-        _currentBagState++;
     }
 }
