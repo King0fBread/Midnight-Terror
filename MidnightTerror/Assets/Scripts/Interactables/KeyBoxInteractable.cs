@@ -18,7 +18,8 @@ public class KeyBoxInteractable : MonoBehaviour, IInteractable
         {
             _boxCollider.enabled = false;
             _animator.CrossFade("KeyBoxOpened", 0, 0);
+
+            SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedKeyboxKey);
         }
-        //change the scene layout for the ending
     }
 }

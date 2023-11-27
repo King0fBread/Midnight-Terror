@@ -1399,8 +1399,24 @@ MonoBehaviour:
     sound: 1
   - clip: {fileID: 8300000, guid: dfd08bd8989ebe84881a9e3d1d6b8327, type: 3}
     sound: 2
+  - clip: {fileID: 8300000, guid: 6fe028d1d24c30142acf3360d43cc7ce, type: 3}
+    sound: 3
+  - clip: {fileID: 8300000, guid: 73b5f9f7f53de5a4e9d224cf55a105f4, type: 3}
+    sound: 4
   - clip: {fileID: 8300000, guid: 99be91ef5b5387340ab4f4e0fabc4413, type: 3}
     sound: 5
+  - clip: {fileID: 8300000, guid: 655c27a1fb5479c4e822633e9182fbb4, type: 3}
+    sound: 6
+  - clip: {fileID: 8300000, guid: 98e6392eb4b23fe4ab5407e402c3b0c2, type: 3}
+    sound: 7
+  - clip: {fileID: 8300000, guid: e33a0d709171fdb4c8cb49c7bc4a0e1b, type: 3}
+    sound: 8
+  - clip: {fileID: 8300000, guid: cf8125478056cbf43a53688f5f05510b, type: 3}
+    sound: 9
+  - clip: {fileID: 8300000, guid: 7f3736894a704264d82cc914e820b381, type: 3}
+    sound: 10
+  - clip: {fileID: 8300000, guid: 5f28170a68ff2d84681280a46e9b0e33, type: 3}
+    sound: 11
 --- !u!1 &263252871
 GameObject:
   m_ObjectHideFlags: 0

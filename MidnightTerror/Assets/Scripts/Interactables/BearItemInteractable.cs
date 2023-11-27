@@ -18,6 +18,8 @@ public class BearItemInteractable : MonoBehaviour, IInteractable
         {
             _animator.CrossFade("BearItemBroken", 0, 0);
             _batteriesPickable.SetActive(true);
+
+            SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedRockOnToy);
         }
     }
 }

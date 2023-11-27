@@ -43,6 +43,8 @@ public class ForestAreaMovementManager : MonoBehaviour
         _playerCamera.transform.position = _forestCameraTransforms[_currentForestAreaID].position;
         _currentForestAreaID++;
 
+        SoundsManager.instance.PlayRandomWalkingSound();
+
         if (_currentForestAreaID == _maxForestAreaID)
         {
             foreach (Button button in _forestMovementButtons)

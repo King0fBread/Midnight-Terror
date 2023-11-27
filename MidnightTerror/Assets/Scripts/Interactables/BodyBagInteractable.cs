@@ -20,6 +20,8 @@ public class BodyBagInteractable : MonoBehaviour, IInteractable
                 {
                     _animator.CrossFade("BagFloatingIdleFar", 0, 0);
                     _currentBagState++;
+
+                    SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedKnife);
                 }
                 break;
             case 1:
@@ -27,6 +29,8 @@ public class BodyBagInteractable : MonoBehaviour, IInteractable
                 {
                     _animator.CrossFade("BagFloatingIdleClose", 0, 0);
                     _currentBagState++;
+
+                    SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedRope);
                 }
                 break;
             case 2:
@@ -34,6 +38,8 @@ public class BodyBagInteractable : MonoBehaviour, IInteractable
                 {
                     _armWithItemObject.SetActive(true);
                     _currentBagState++;
+
+                    SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedBoxcutter);
                 }
                 break;
         }

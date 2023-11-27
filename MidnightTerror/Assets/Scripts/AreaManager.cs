@@ -67,38 +67,30 @@ public class AreaManager : MonoBehaviour
             areaFunctionality.ExecuteMechanicOnEntrance();
         }
     }
-    private void PlayRandomWalkingSound()
-    {
-        int randomID = UnityEngine.Random.Range(0, 2);
-        Array enumValues = Enum.GetValues(typeof(SoundsManager.Sounds));
-        SoundsManager.Sounds sound = (SoundsManager.Sounds)enumValues.GetValue(randomID);
-
-        SoundsManager.instance.PlaySound(sound);
-    }
 
     public void ChangeDirectionToLeft()
     {
         _currentAreaCodeHorizontal -= 1;
         DisplayCurrentArea();
-        PlayRandomWalkingSound();
+        SoundsManager.instance.PlayRandomWalkingSound();
     }
     public void ChangeDirectionToRight()
     {
         _currentAreaCodeHorizontal += 1;
         DisplayCurrentArea();
-        PlayRandomWalkingSound();
+        SoundsManager.instance.PlayRandomWalkingSound();
     }
     public void ChangeDirectionToTop()
     {
         _currentAreaCodeVertical += 1;
         DisplayCurrentArea();
-        PlayRandomWalkingSound();
+        SoundsManager.instance.PlayRandomWalkingSound();
     }
     public void ChangeDirectionToBotton()
     {
         _currentAreaCodeVertical -= 1;
         DisplayCurrentArea();
-        PlayRandomWalkingSound();
+        SoundsManager.instance.PlayRandomWalkingSound();
     }
     public void SetAreaCodesAndMoveToArea(int horizontalCode, int verticalCode)
     {

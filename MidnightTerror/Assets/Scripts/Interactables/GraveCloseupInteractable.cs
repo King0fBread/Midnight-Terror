@@ -28,6 +28,8 @@ public class GraveCloseupInteractable : MonoBehaviour, IInteractable
         {
             _graveDugUp.SetActive(true);
             _graveDiggingCollider.enabled = false;
+
+            SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedShovel);
         }
     }
 }

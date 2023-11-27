@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro.EditorUtilities;
@@ -48,14 +49,20 @@ public class SoundsManager : MonoBehaviour
     public void PlaySound(Sounds sound)
     {
         GetRequestedAudioClipByName(sound, out _clip);
-        if (!_source.isPlaying)
-        {
-            _source.PlayOneShot(_clip);
-        }
+
+        _source.PlayOneShot(_clip);
     }
     public void StopSound()
     {
         _source.Stop();
+    }
+    public void PlayRandomWalkingSound()
+    {
+        int randomID = UnityEngine.Random.Range(0, 2);
+        Array enumValues = Enum.GetValues(typeof(SoundsManager.Sounds));
+        SoundsManager.Sounds sound = (SoundsManager.Sounds)enumValues.GetValue(randomID);
+
+        PlaySound(sound);
     }
     private void GetRequestedAudioClipByName(Sounds soundToFind, out AudioClip _clip)
     {

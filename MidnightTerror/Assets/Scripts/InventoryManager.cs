@@ -53,6 +53,8 @@ public class InventoryManager : MonoBehaviour
                 slot.PlaceItemInSlot(sprite);
                 _combinableItemsManager.CheckIfSlotHasCombinable(slot);
 
+                SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemPickup);
+
                 return true;
             }
         }
