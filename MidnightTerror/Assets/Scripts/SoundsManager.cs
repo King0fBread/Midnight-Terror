@@ -44,7 +44,11 @@ public class SoundsManager : MonoBehaviour
         ItemUsedRockOnToy,
         ItemUsedRope,
         ItemUsedShovel,
-        UIButtonClick
+        UIButtonClick,
+        AmbienceShack,
+        AmbienceUnlitForest,
+        AmbienceGraveyard,
+        AmbienceSwamp
     }
     public void PlaySound(Sounds sound)
     {
@@ -55,6 +59,10 @@ public class SoundsManager : MonoBehaviour
     public void StopSound()
     {
         _source.Stop();
+    }
+    public void GetCurrentSound()
+    {
+        //return _source.clip;
     }
     public void PlayRandomWalkingSound()
     {

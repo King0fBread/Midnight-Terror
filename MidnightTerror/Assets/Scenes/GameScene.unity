@@ -1417,6 +1417,14 @@ MonoBehaviour:
     sound: 10
   - clip: {fileID: 8300000, guid: 5f28170a68ff2d84681280a46e9b0e33, type: 3}
     sound: 11
+  - clip: {fileID: 8300000, guid: 251261e1896f1e74785520ae63fb20d8, type: 3}
+    sound: 12
+  - clip: {fileID: 8300000, guid: d3e1f26263380c34093a6f99b4ee6b33, type: 3}
+    sound: 13
+  - clip: {fileID: 8300000, guid: a5e3b4a570d63c3458c1f94c91a1a2ec, type: 3}
+    sound: 14
+  - clip: {fileID: 8300000, guid: af3354ed1f4e25c4aaf4e5349810b95b, type: 3}
+    sound: 15
 --- !u!1 &263252871
 GameObject:
   m_ObjectHideFlags: 0
@@ -8666,6 +8674,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1599541060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599541061}
+  - component: {fileID: 1599541062}
+  m_Layer: 0
+  m_Name: CurrentAreaAmbienceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1599541061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599541060}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1894607125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1599541062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599541060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4cf795f05c22c45a6a1930d44e08ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areasAmbientSounds:
+  - verticalCode: 1
+    horizontalCode: 0
+    sound: 12
+  - verticalCode: 1
+    horizontalCode: 1
+    sound: 13
 --- !u!1 &1615140160
 GameObject:
   m_ObjectHideFlags: 0
@@ -10495,6 +10554,7 @@ Transform:
   - {fileID: 1390736109}
   - {fileID: 1013687110}
   - {fileID: 246541559}
+  - {fileID: 1599541061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1908082831
