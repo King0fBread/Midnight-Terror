@@ -13,11 +13,17 @@ public class CurrentAreaAmbienceManager : MonoBehaviour
         public int horizontalCode;
         public SoundsManager.Sounds sound;
     }
-    public void GetCurentAreaCode(int verticalCode, int horizontalCode)
+    public void TryPlayCurrentAreaAmbience(int verticalCode, int horizontalCode)
     {
         foreach(AreaToSoundConnection areaToSound in areasAmbientSounds)
         {
-
+            if(areaToSound.verticalCode == verticalCode && areaToSound.horizontalCode == horizontalCode)
+            {
+                if (!SoundsManager.instance.IsRequredAmbiencePlaying(areaToSound.sound))
+                {
+                    SoundsManager.instance.PlaySound(areaToSound.sound);
+                }
+            }
         }
     }
 }

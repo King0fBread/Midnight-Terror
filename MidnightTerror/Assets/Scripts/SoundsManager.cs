@@ -7,8 +7,12 @@ using UnityEngine.Audio;
 
 public class SoundsManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _mainAudioSource;
+    [SerializeField] private AudioSource _ambienceAudioSource;
+    private Sounds _currentAmbienceSound;
     private AudioClip _clip;
+    private bool _isCurrentSoundAmbience = false;
+
     public AudioClipPairedToSound[] audioClipsPairedToSounds;
 
     [System.Serializable]
@@ -16,6 +20,7 @@ public class SoundsManager : MonoBehaviour
     {
         public AudioClip clip;
         public Sounds sound;
+        public bool isAmbienceSound = false;
     }
 
     private static SoundsManager _instance;
@@ -52,17 +57,11 @@ public class SoundsManager : MonoBehaviour
     }
     public void PlaySound(Sounds sound)
     {
-        GetRequestedAudioClipByName(sound, out _clip);
-
-        _source.PlayOneShot(_clip);
+        PlayClipInAppropriateAudioSource(GetRequestedAudioClipByName(sound), _isCurrentSoundAmbience);
     }
     public void StopSound()
     {
-        _source.Stop();
-    }
-    public void GetCurrentSound()
-    {
-        //return _source.clip;
+        _mainAudioSource.Stop();
     }
     public void PlayRandomWalkingSound()
     {
@@ -72,15 +71,33 @@ public class SoundsManager : MonoBehaviour
 
         PlaySound(sound);
     }
-    private void GetRequestedAudioClipByName(Sounds soundToFind, out AudioClip _clip)
+    private AudioClip GetRequestedAudioClipByName(Sounds soundToFind)
     {
-        _clip = null;
         foreach(AudioClipPairedToSound audioClipPairedToSound in audioClipsPairedToSounds)
         {
             if(audioClipPairedToSound.sound == soundToFind)
             {
-                _clip = audioClipPairedToSound.clip;
+                _isCurrentSoundAmbience = audioClipPairedToSound.isAmbienceSound;
+                return audioClipPairedToSound.clip;
             }
         }
+        return null;
+    }
+    private void PlayClipInAppropriateAudioSource(AudioClip clip, bool isAmbientSound)
+    {
+        if (isAmbientSound)
+        {
+            _ambienceAudioSource.Stop();
+            _ambienceAudioSource.PlayOneShot(clip);
+        }
+        else
+        {
+            _mainAudioSource.PlayOneShot(clip);
+        }
+    }
+    public bool IsRequredAmbiencePlaying(Sounds sound)
+    {
+        bool requiredSoundIsCurrentlyPlaying = _ambienceAudioSource.clip == GetRequestedAudioClipByName(sound) ? true : false;
+        return requiredSoundIsCurrentlyPlaying; 
     }
 }

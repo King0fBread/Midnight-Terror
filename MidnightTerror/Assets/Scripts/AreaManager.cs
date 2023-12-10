@@ -15,6 +15,8 @@ public class AreaManager : MonoBehaviour
 
     [SerializeField] private TransitionScreenAlphaControl _transitionScreenAlphaControl;
 
+    [SerializeField] private CurrentAreaAmbienceManager _currentAreaAmbienceManager;
+
     //array of area comopnents for referencing the areas
 
     [Serializable]
@@ -56,6 +58,8 @@ public class AreaManager : MonoBehaviour
 
         _camera.transform.position = area.status.GetCameraTransform().position;
         _uiManager.DisplayDirectionButtons(area.status);
+
+        _currentAreaAmbienceManager.TryPlayCurrentAreaAmbience(_currentAreaCodeVertical, _currentAreaCodeHorizontal);
 
         CheckAreaForFunctionalityAndExecute(area.status);
     }
