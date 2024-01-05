@@ -32,4 +32,10 @@ public class GraveCloseupInteractable : MonoBehaviour, IInteractable
             SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedShovel);
         }
     }
+    public void ResetGrave()
+    {
+        _graveBasic.SetActive(false);
+        _graveInitialCollider.enabled = true;
+        _graveDiggingCollider.enabled = false;
+    }
 }

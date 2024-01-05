@@ -1443,6 +1443,9 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: af3354ed1f4e25c4aaf4e5349810b95b, type: 3}
     sound: 15
     isAmbienceSound: 1
+  - clip: {fileID: 8300000, guid: bbec132eaeca72441aba8fd9dc07ff26, type: 3}
+    sound: 16
+    isAmbienceSound: 0
 --- !u!1 &263252871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,7 +3333,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.3, y: 112.5, z: -10}
+  m_LocalPosition: {x: 0.042333603, y: -20.03, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3829,8 +3832,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1657332413
-  m_SortingLayer: 2
+  m_SortingLayerID: 817351931
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd18ed55206355248b2af9fc565bc86f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8217,10 +8220,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126956292}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1701126410}
+        m_TargetAssemblyTypeName: GraveCloseupInteractable, Assembly-CSharp
+        m_MethodName: ResetGrave
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10533,8 +10536,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1657332413
-  m_SortingLayer: 2
+  m_SortingLayerID: 817351931
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd18ed55206355248b2af9fc565bc86f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11248,7 +11251,7 @@ Transform:
   m_GameObject: {fileID: 1945317072}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.69005436, w: 0.72375757}
-  m_LocalPosition: {x: 0.44, y: 0.89, z: 0}
+  m_LocalPosition: {x: 0.457, y: 0.889, z: 0}
   m_LocalScale: {x: 0.538387, y: 0.538387, z: 0.538387}
   m_ConstrainProportionsScale: 0
   m_Children:

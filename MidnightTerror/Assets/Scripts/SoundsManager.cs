@@ -9,9 +9,9 @@ public class SoundsManager : MonoBehaviour
 {
     [SerializeField] private AudioSource _mainAudioSource;
     [SerializeField] private AudioSource _ambienceAudioSource;
-    private Sounds _currentAmbienceSound;
-    private AudioClip _clip;
     private bool _isCurrentSoundAmbience = false;
+
+    private AudioClip _currentAmbienceSoundClip;
 
     public AudioClipPairedToSound[] audioClipsPairedToSounds;
 
@@ -53,7 +53,8 @@ public class SoundsManager : MonoBehaviour
         AmbienceShack,
         AmbienceUnlitForest,
         AmbienceGraveyard,
-        AmbienceSwamp
+        AmbienceSwamp,
+        MainGateGameStartLightning
     }
     public void PlaySound(Sounds sound)
     {
@@ -62,6 +63,14 @@ public class SoundsManager : MonoBehaviour
     public void StopSound()
     {
         _mainAudioSource.Stop();
+    }
+    private void Update()
+    {
+        //looping the ambient sound if player is not moving
+        if(!_ambienceAudioSource.isPlaying && _currentAmbienceSoundClip != null)
+        {
+            _ambienceAudioSource.PlayOneShot(_currentAmbienceSoundClip);
+        }
     }
     public void PlayRandomWalkingSound()
     {
@@ -87,6 +96,8 @@ public class SoundsManager : MonoBehaviour
     {
         if (isAmbientSound)
         {
+            _currentAmbienceSoundClip = clip;
+
             _ambienceAudioSource.Stop();
             _ambienceAudioSource.PlayOneShot(clip);
         }

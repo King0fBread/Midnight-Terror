@@ -36,6 +36,8 @@ public class AreaManager : MonoBehaviour
         _currentAreaCodeVertical = 0;
 
         DisplayCurrentArea();
+
+        SoundsManager.instance.PlaySound(SoundsManager.Sounds.MainGateGameStartLightning);
     }
 
     private void DisplayCurrentArea()
