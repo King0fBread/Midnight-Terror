@@ -14,6 +14,8 @@ public class LanternAreaMovementManager : MonoBehaviour
     [SerializeField] private GameObject _baseMovementUI;
     [SerializeField] private GameObject _lanternAreaMovementUI;
 
+    [SerializeField] private GameObject _runText;
+
     [SerializeField] private float _imageSizeIncreasePerStep;
     [SerializeField] private int _totalAmountOfSteps;
 
@@ -53,6 +55,8 @@ public class LanternAreaMovementManager : MonoBehaviour
     {
         _camera.transform.position = _lanternAreaCameraTransform.position;
 
+        SoundsManager.instance.StopSoundManually(true);
+
         _baseMovementUI.SetActive(false);
         _lanternAreaMovementUI.SetActive(true);
 
@@ -76,6 +80,7 @@ public class LanternAreaMovementManager : MonoBehaviour
     {
         _lanternAreaObject.SetActive(false);
         _lanternAreaMovementUI.SetActive(false);
+        _runText.SetActive(true);
 
         _forestManager.MoveToFirstForestArea(_camera);
     }

@@ -11,6 +11,7 @@ public class ForestAreaMovementManager : MonoBehaviour
     [SerializeField] private GameObject _forestGhostObject;
     [SerializeField] private Transform[] _forestCameraTransforms;
     [SerializeField] private Button[] _forestMovementButtons;
+    [SerializeField] private GameObject _runText;
     private int _currentForestAreaID;
     private int _maxForestAreaID;
 
@@ -51,6 +52,8 @@ public class ForestAreaMovementManager : MonoBehaviour
             {
                 button.onClick.RemoveListener(MoveToNextForestArea);
             }
+
+            Destroy(_runText);
 
             _forestMovementUI.SetActive(false);
             _forestGhostObject.SetActive(true);

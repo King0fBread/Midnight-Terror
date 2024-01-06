@@ -51,18 +51,29 @@ public class SoundsManager : MonoBehaviour
         ItemUsedShovel,
         UIButtonClick,
         AmbienceShack,
-        AmbienceUnlitForest,
+        GhostLaughUnlitForest,
         AmbienceGraveyard,
         AmbienceSwamp,
-        MainGateGameStartLightning
+        MainGateGameStartLightning,
+        GhostImpactForestFinal,
+        GhostImpactUnlitForest,
+        CoffinCutsceneSound,
+        GhostImpactSmiling,
     }
     public void PlaySound(Sounds sound)
     {
         PlayClipInAppropriateAudioSource(GetRequestedAudioClipByName(sound), _isCurrentSoundAmbience);
     }
-    public void StopSound()
+    public void StopSoundManually(bool isAmbientSound)
     {
-        _mainAudioSource.Stop();
+        if (isAmbientSound)
+        {
+            _ambienceAudioSource.Stop();
+        }
+        else
+        {
+            _mainAudioSource.Stop();
+        }
     }
     private void Update()
     {

@@ -157,8 +157,15 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 2.7
-    functionName: SetActiveTarget
+  - time: 0
+    functionName: PlaySoundViaManager
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.7166667
+    functionName: SetTargetsActive
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

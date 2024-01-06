@@ -26,6 +26,7 @@ public class UnlitForestInteractable : MonoBehaviour, IInteractable
     {
         _overlayAnimator.Play("UnlitAreaBlackOverlay");
         SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedCamera);
+        SoundsManager.instance.PlaySound(SoundsManager.Sounds.GhostImpactUnlitForest);
         yield return new WaitForSeconds(1f);
         _boxCutterItem.SetActive(true);
 
