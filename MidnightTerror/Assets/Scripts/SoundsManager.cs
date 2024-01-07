@@ -59,6 +59,7 @@ public class SoundsManager : MonoBehaviour
         GhostImpactUnlitForest,
         CoffinCutsceneSound,
         GhostImpactSmiling,
+        AmbienceFinalForest,
     }
     public void PlaySound(Sounds sound)
     {
@@ -68,6 +69,7 @@ public class SoundsManager : MonoBehaviour
     {
         if (isAmbientSound)
         {
+            _currentAmbienceSoundClip = null;
             _ambienceAudioSource.Stop();
         }
         else

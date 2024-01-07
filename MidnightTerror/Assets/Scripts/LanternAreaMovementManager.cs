@@ -83,6 +83,8 @@ public class LanternAreaMovementManager : MonoBehaviour
         _runText.SetActive(true);
 
         _forestManager.MoveToFirstForestArea(_camera);
+
+        SoundsManager.instance.PlaySound(SoundsManager.Sounds.AmbienceFinalForest);
     }
     public void EnableLeavingLanternArea()
     {

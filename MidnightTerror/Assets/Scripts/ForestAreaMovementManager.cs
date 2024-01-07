@@ -12,6 +12,8 @@ public class ForestAreaMovementManager : MonoBehaviour
     [SerializeField] private Transform[] _forestCameraTransforms;
     [SerializeField] private Button[] _forestMovementButtons;
     [SerializeField] private GameObject _runText;
+    [SerializeField] private GameObject _transitionScreen;
+
     private int _currentForestAreaID;
     private int _maxForestAreaID;
 
@@ -41,9 +43,9 @@ public class ForestAreaMovementManager : MonoBehaviour
     private void MoveToNextForestArea()
     {
 
-        _playerCamera.transform.position = _forestCameraTransforms[_currentForestAreaID].position;
+        StartCoroutine(AreaTransitionCoroutine());
         _currentForestAreaID++;
-
+        
         SoundsManager.instance.PlayRandomWalkingSound();
 
         if (_currentForestAreaID == _maxForestAreaID)
@@ -53,10 +55,18 @@ public class ForestAreaMovementManager : MonoBehaviour
                 button.onClick.RemoveListener(MoveToNextForestArea);
             }
 
+            SoundsManager.instance.StopSoundManually(true);
+
             Destroy(_runText);
 
             _forestMovementUI.SetActive(false);
             _forestGhostObject.SetActive(true);
         }
+    }
+    private IEnumerator AreaTransitionCoroutine()
+    {
+        _transitionScreen.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        _playerCamera.transform.position = _forestCameraTransforms[_currentForestAreaID].position;
     }
 }

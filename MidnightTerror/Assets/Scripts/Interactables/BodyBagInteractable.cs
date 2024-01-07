@@ -40,6 +40,7 @@ public class BodyBagInteractable : MonoBehaviour, IInteractable
                     _currentBagState++;
 
                     SoundsManager.instance.PlaySound(SoundsManager.Sounds.ItemUsedBoxcutter);
+                    SoundsManager.instance.PlaySound(SoundsManager.Sounds.GhostImpactUnlitForest);
                 }
                 break;
         }
