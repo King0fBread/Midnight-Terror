@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +17,7 @@ public class ForestAreaMovementManager : MonoBehaviour
     private Camera _playerCamera;
     private void Awake()
     {
-        _maxForestAreaID = _forestCameraTransforms.Length;
+        _maxForestAreaID = _forestCameraTransforms.Length-1;
 
         foreach(Button button in _forestMovementButtons)
         {
@@ -43,10 +40,11 @@ public class ForestAreaMovementManager : MonoBehaviour
     private void MoveToNextForestArea()
     {
 
-        StartCoroutine(AreaTransitionCoroutine());
-        _currentForestAreaID++;
-        
         SoundsManager.instance.PlayRandomWalkingSound();
+        _currentForestAreaID++;
+
+        StartCoroutine(AreaTransitionCoroutine());
+        
 
         if (_currentForestAreaID == _maxForestAreaID)
         {

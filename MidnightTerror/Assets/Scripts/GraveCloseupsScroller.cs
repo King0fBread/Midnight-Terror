@@ -1,7 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GraveCloseupsScroller : MonoBehaviour
@@ -19,6 +15,8 @@ public class GraveCloseupsScroller : MonoBehaviour
         _uiManager.HideAllDirectionButtons();
 
         EnableCurrentCloseup();
+
+        SoundsManager.instance.PlayRandomWalkingSound();
     }
     public void HideCloseups()
     {
@@ -27,6 +25,8 @@ public class GraveCloseupsScroller : MonoBehaviour
     }
     public void EnableCurrentCloseup()
     {
+        SoundsManager.instance.PlayRandomWalkingSound();
+
         if(_closeupIndex > _maxCloseupIndex)
         {
             HideCloseups();
